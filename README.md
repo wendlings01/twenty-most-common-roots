@@ -35,6 +35,16 @@ Running it on Alice in Wonderland gives me this:
 ['said', 'alic', 'littl', 'look', 'one', 'like', 'know', 'went', 'thought', 'thing', 'time', 'go', 'queen', 'say', 'get', 'see', 'think', 'king', 'turtl', 'head']
 ```
 
+The test suite can be ran with a straightforward
+```powershell
+(env) PS C:\Users\wendl\twenty-most-common-roots> python .\test.py
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.003s
+
+OK
+```
+
 # General Overview
 My program takes the two input files and parses them in nearly identical ways. It starts with the stop words, pulls out whitespace delineated words from every line, strips off all remaining non-alphabetical characters, and `tolower`s that result. Then it stems each stop word. I was debating not stemming these, but it simplified the process in my mind and I didn't seem to lose meaningful performance. These stemmed stop words are stored in a dictionary with the stem as the key and their count as the value.
 
