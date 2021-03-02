@@ -1,0 +1,12 @@
+some
+words
+in
+a
+column
+with
+some
+repeating
+words
+in
+that
+column
