@@ -32,7 +32,7 @@ Running the program on the declaration of independence gives me this:
 Running it on Alice in Wonderland gives me this:
 ```powershell
 (env) PS C:\Users\wendl\twenty-most-common-roots> python .\main.py .\stopwords.txt .\Text2.txt
-['said', 'alic', 'littl', 'look', 'one', 'like', 'know', 'went', 'thought', 'go', 'thing', 'queen', 'time', 'say', 'get', 'see', 'think', 'king', 'turtl', 'head']
+['said', 'alic', 'littl', 'look', 'one', 'like', 'know', 'went', 'thought', 'thing', 'time', 'go', 'queen', 'say', 'get', 'see', 'think', 'king', 'turtl', 'head']
 ```
 
 # General Overview
@@ -45,7 +45,7 @@ The last step before printing is to order the dictionary and slice off the top 2
 There wasn't a request for a specific output format so I left it printing the bare list object, which is decently readable for me at this size.
 
 # Assumptions
-- We don't need to worry about non-english languages. I started looking at making a test for this, but the data wasn't straight-forward to read and so was deprioritized.
+- We don't need to worry about non-english languages. I started looking at making a test for this, but the data wasn't straight-forward to read and so was deprioritized. And any special non-english syntax wouldn't be thought of
 - Function input will be of the correct type, within reason. No one else is calling these functions for now.
 - Users will use main.py as intended. There's a note within its main function addressing how command line input could be improved for later iterations.
 

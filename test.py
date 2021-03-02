@@ -14,10 +14,10 @@ class Test_convert_file_to_stemmed_word_count_dict(unittest.TestCase):
                 "file_path": "test_data/whitespace.txt",
                 "expected_dict": {"space": 1, "newlin": 1}
             },
-            # makes sure non-alphabetical characters are removed. this is all of the base characters on my keyboard
+            # makes sure non-alphabetical characters are removed, but apostraphes don't separate words
             {
                 "file_path": "test_data/non-alphabeticals.txt",
-                "expected_dict": {"alphabet": 1}
+                "expected_dict": {"abcdefghi": 1, "jklmnopqrstuvwxyz": 1}
             },
             # no input text means no output
             {
@@ -32,7 +32,7 @@ class Test_convert_file_to_stemmed_word_count_dict(unittest.TestCase):
             # make sure each white-space separated word gets read
             {
                 "file_path": "test_data/single-line.txt",
-                "expected_dict": {"some": 3, "word":2, "in": 2, "a": 1, "row":2, "with": 1, "repeat": 1, "that":1}
+                "expected_dict": {"some": 2, "word":2, "in": 2, "a": 1, "row":2, "with": 1, "repeat": 1, "that":1}
             },
             # make sure the program gracefully handles an invalid file
             {
@@ -43,6 +43,11 @@ class Test_convert_file_to_stemmed_word_count_dict(unittest.TestCase):
             {
                 "file_path": "test_data/",
                 "expected_dict": {}
+            },
+            # make sure hyphen separate words(implied by the non-alphabeticals, but more important to be explicit since this is a common practice in english)
+            {
+                "file_path": "test_data/hyphenations.txt",
+                "expected_dict": {"tea": 1, "time": 1, "littl":1, "town":1}
             },
         ]
 
